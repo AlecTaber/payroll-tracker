@@ -3,19 +3,21 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function () {
-    do {
+  let askAgain = true;
+
+  while (askAgain) {
     let firstName = prompt("What is the employee's first name?");
     let lastName = prompt("What is the employee's last name?");
     let salary = prompt("What is the employee's salary?");
+    let continueForm = confirm("Do you want to add another employee?");
 
-    let askAgain;
-    if (confirm("Do you want to add another employee?") == true) {
-        askAgain == true;
+    if (continueForm) {
+      askAgain = true;
     } else {
-        askAgain == false
+      askAgain = false
     };
-    }
-    while(askAgain == true);
+  }
+
 }
 
 // Display the average salary
